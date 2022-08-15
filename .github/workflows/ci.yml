@@ -19,7 +19,7 @@ jobs:
       image: ghcr.io/epicgames/unreal-engine:dev-4.27
       credentials:
         username: ${{ github.actor }}
-        password: ${{ secrets.github_token }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
     steps:
       - name: Print Version
