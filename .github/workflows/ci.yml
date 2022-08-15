@@ -12,7 +12,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: ghcr.io/epicgames/unreal-engine:dev-4.27
+    container:
+      image: ghcr.io/epicgames/unreal-engine:dev-4.27
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
 
     steps:
       - name: Print Version
