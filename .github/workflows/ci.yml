@@ -1,0 +1,19 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ghcr.io/epicgames/unreal-engine:dev-4.27
+
+    steps:
+      - name: Print Version
+        run: ue4 version
